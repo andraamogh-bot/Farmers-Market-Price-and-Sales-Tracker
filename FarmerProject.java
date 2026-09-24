@@ -109,6 +109,55 @@ public class FarmerProject {
         System.out.println("Market price updated successfully.");
     }
 
-    // TEAMMATE'S METHODS WILL BE ADDED BELOW
+    static void recordSale() {
 
+    System.out.print("Enter quantity sold (kg): ");
+    double sold = sc.nextDouble();
+
+    if (sold > 0 && sold <= quantity) {
+
+        quantitySold = quantitySold + sold;
+        quantity = quantity - sold;
+
+        double saleAmount = sold * marketPrice;
+        totalSales = totalSales + saleAmount;
+
+        System.out.println("Sale recorded successfully.");
+        System.out.println("Sale Amount: ₹" + saleAmount);
+
+    } else {
+
+        System.out.println("Invalid quantity.");
+    }
+}
+
+static void calculateSales() {
+
+    System.out.println("\n========== SALES SUMMARY ==========");
+
+    System.out.println("Quantity Sold: " + quantitySold + " kg");
+    System.out.println("Total Sales: ₹" + totalSales);
+}
+
+static void viewRemainingQuantity() {
+
+    System.out.println("\n========== REMAINING QUANTITY ==========");
+
+    System.out.println("Remaining Quantity: " + quantity + " kg");
+}
+
+static void displaySummary() {
+
+    System.out.println("\n=============================================");
+    System.out.println("              FARMER SUMMARY");
+    System.out.println("=============================================");
+
+    System.out.println("Crop Name: " + cropName);
+    System.out.println("Current Market Price: ₹" + marketPrice + "/kg");
+    System.out.println("Quantity Sold: " + quantitySold + " kg");
+    System.out.println("Remaining Quantity: " + quantity + " kg");
+    System.out.println("Total Sales: ₹" + totalSales);
+
+    System.out.println("=============================================");
+}
 }
